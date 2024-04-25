@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:fvm/fvm.dart';
 
 import 'counter.dart'; // Import the Counter
 
@@ -42,7 +43,7 @@ class MyHomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text("You have pushed the button this many times: "),
+            const Text("You have pushed the button this many times: "),
             Observer(
               builder: (_) => Text(
                 '${counter.value}',
@@ -54,16 +55,17 @@ class MyHomePage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 FloatingActionButton(
-                  onPressed: counter.increment,
-                  tooltip: "Increment",
-                  child: Icon(Icons.add),
+                  onPressed: counter.decrement,
+                  tooltip: "Decrement",
+                  child: const Icon(Icons.remove),
                 ),
 
                 FloatingActionButton(
-                  onPressed: counter.decrement,
-                  tooltip: "Decrement",
-                  child: Icon(Icons.remove),
+                  onPressed: counter.increment,
+                  tooltip: "Increment",
+                  child: const Icon(Icons.add),
                 ),
+                
             ],)
           ],
         )),
